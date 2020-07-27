@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "A Django REST framework plugin for pytest."
 authors = ["Zach \"theY4Kman\" Kanzler <they4kman@gmail.com>"]
 license = "MIT"
+url = "https://github.com/theY4Kman/pytest-drf"
 
 [tool.poetry.dependencies]
 python = ">=3.6,<4.0"
