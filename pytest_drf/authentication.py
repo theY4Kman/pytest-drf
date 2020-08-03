@@ -12,8 +12,6 @@ import inflection
 import pytest
 from pytest_lambda import lambda_fixture
 
-from pytest_drf.util import prioritize_bases
-
 __all__ = [
     'AsUser',
     'AsAnonymousUser',
@@ -48,8 +46,7 @@ class _AsUserMeta(type):
             client_user = lambda_fixture(user_fixture_name)
 
         user_fixture_title = inflection.camelize(user_fixture_name)
-        mcs = prioritize_bases(AsUserXYZ)
-        return mcs(f'As{user_fixture_title}', (AsUserXYZ,), {})
+        return type(f'As{user_fixture_title}', (AsUserXYZ,), {})
 
 
 class AsUser(metaclass=_AsUserMeta):

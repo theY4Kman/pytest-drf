@@ -15,6 +15,8 @@ import pytest
 from pytest_common_subject import CommonSubjectTestMixin
 from pytest_lambda import lambda_fixture, static_fixture
 
+from pytest_drf.util import deprioritize_base
+
 __all__ = [
     'APIViewTest',
     'ViewSetTest',
@@ -28,6 +30,7 @@ __all__ = [
 ]
 
 
+@deprioritize_base
 class APIViewTest(CommonSubjectTestMixin):
     """Base class providing default fixtures for DRF API views
 

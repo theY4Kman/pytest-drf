@@ -7,11 +7,11 @@ able to access a resource.
 
 """
 from pytest_drf.authentication import AsAnonymousUser
-from pytest_drf.status import Returns401
+from pytest_drf.status import Returns403
 
 __all__ = ['ForbidsAnonymousUsers']
 
 
 class ForbidsAnonymousUsers:
-    class TestForbidsAnonymousUser(Returns401, AsAnonymousUser):
+    class TestForbidsAnonymousUser(Returns403, AsAnonymousUser):
         pass
