@@ -47,10 +47,10 @@ description = "A high-level Python Web framework that encourages rapid developme
 name = "django"
 optional = false
 python-versions = ">=3.6"
-version = "3.0.8"
+version = "3.1"
 
 [package.dependencies]
-asgiref = ">=3.2,<4.0"
+asgiref = ">=3.2.10,<3.3.0"
 pytz = "*"
 sqlparse = ">=0.2.2"
 
@@ -194,7 +194,7 @@ description = "Useful assertion utilities for use with pytest"
 name = "pytest-assert-utils"
 optional = false
 python-versions = ">=3.6,<4.0"
-version = "0.1.1"
+version = "0.2.0"
 
 [[package]]
 category = "dev"
@@ -218,12 +218,12 @@ description = "pytest framework for testing different aspects of a common method
 name = "pytest-common-subject"
 optional = false
 python-versions = ">=3.6,<4.0"
-version = "1.0.2"
+version = "1.0.3"
 
 [package.dependencies]
 lazy-object-proxy = ">=1.3.1,<2.0.0"
 pytest = ">=3.6,<6.1"
-pytest-fixture-order = "0.1.1"
+pytest-fixture-order = ">=0.1.2,<0.2.0"
 pytest-lambda = ">=0.1.0"
 
 [[package]]
@@ -247,7 +247,7 @@ description = "pytest plugin to control fixture evaluation order"
 name = "pytest-fixture-order"
 optional = false
 python-versions = ">=3.6,<4.0"
-version = "0.1.1"
+version = "0.1.2"
 
 [package.dependencies]
 pytest = ">=3.0"
@@ -318,7 +318,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "0acc091aadf31939207ae35e97e6866b3e1cd23c545536520569783c6708d5cf"
+content-hash = "f9bb6356b2f0940463b08494598744ebf49d13199bb9da192376f52a3d6cc931"
 lock-version = "1.0"
 python-versions = ">=3.6,<4.0"
 
@@ -340,8 +340,8 @@ colorama = [
     {file = "colorama-0.4.3.tar.gz", hash = "sha256:e96da0d330793e2cb9485e9ddfd918d456036c7149416295932478192f4436a1"},
 ]
 django = [
-    {file = "Django-3.0.8-py3-none-any.whl", hash = "sha256:5457fc953ec560c5521b41fad9e6734a4668b7ba205832191bbdff40ec61073c"},
-    {file = "Django-3.0.8.tar.gz", hash = "sha256:31a5fbbea5fc71c99e288ec0b2f00302a0a92c44b13ede80b73a6a4d6d205582"},
+    {file = "Django-3.1-py3-none-any.whl", hash = "sha256:1a63f5bb6ff4d7c42f62a519edc2adbb37f9b78068a5a862beff858b68e3dc8b"},
+    {file = "Django-3.1.tar.gz", hash = "sha256:2d390268a13c655c97e0e2ede9d117007996db692c1bb93eabebd4fb7ea7012b"},
 ]
 djangorestframework = [
     {file = "djangorestframework-3.11.0-py3-none-any.whl", hash = "sha256:05809fc66e1c997fd9a32ea5730d9f4ba28b109b9da71fccfa5ff241201fd0a4"},
@@ -407,24 +407,24 @@ pytest = [
     {file = "pytest-6.0.1.tar.gz", hash = "sha256:85228d75db9f45e06e57ef9bf4429267f81ac7c0d742cc9ed63d09886a9fe6f4"},
 ]
 pytest-assert-utils = [
-    {file = "pytest-assert-utils-0.1.1.tar.gz", hash = "sha256:d672f283a7ec2d423a8d0b54385532e533b5b0a638fb7eec6a14706022a108ea"},
-    {file = "pytest_assert_utils-0.1.1-py3-none-any.whl", hash = "sha256:581bcb647126c66c73814eb6227d2d72c6869078903614fc8d0bfc4d9b34403d"},
+    {file = "pytest-assert-utils-0.2.0.tar.gz", hash = "sha256:8a9d72b995716a468a84906a24a78783d3cd547f3871c9d0a214a32239582e2b"},
+    {file = "pytest_assert_utils-0.2.0-py3-none-any.whl", hash = "sha256:1155f59d3e7bc098644bc16de4bf87042b3abdf681715d4f503a1161eb057a59"},
 ]
 pytest-camel-collect = [
     {file = "pytest-camel-collect-1.0.2.tar.gz", hash = "sha256:de4d2a54db3f5dd743ab90c350f9481b19cd713684e4feae893121c728b0f09c"},
     {file = "pytest_camel_collect-1.0.2-py3-none-any.whl", hash = "sha256:d119d4908616d4999bc7b440d7aa71057d89334646ffc17f656c8977c619e945"},
 ]
 pytest-common-subject = [
-    {file = "pytest-common-subject-1.0.2.tar.gz", hash = "sha256:a00a7fe5a10df1d01dc4dd64508f3399ad28ccb45661633d067fec6dfe517603"},
-    {file = "pytest_common_subject-1.0.2-py3-none-any.whl", hash = "sha256:bf079744b54f4cd5ba4e6dffe00d0c45e0e6aea26f3087500e64eda798966cfd"},
+    {file = "pytest-common-subject-1.0.3.tar.gz", hash = "sha256:d1bd743a4dcc3ca882d88a587e261b57552832d958503e0e770a67d3d8e4a756"},
+    {file = "pytest_common_subject-1.0.3-py3-none-any.whl", hash = "sha256:1663eedc32823ddcd8976325e2196414734d7be9465d9192ed74485a5a078cdc"},
 ]
 pytest-django = [
     {file = "pytest-django-3.9.0.tar.gz", hash = "sha256:664e5f42242e5e182519388f01b9f25d824a9feb7cd17d8f863c8d776f38baf9"},
     {file = "pytest_django-3.9.0-py2.py3-none-any.whl", hash = "sha256:64f99d565dd9497af412fcab2989fe40982c1282d4118ff422b407f3f7275ca5"},
 ]
 pytest-fixture-order = [
-    {file = "pytest-fixture-order-0.1.1.tar.gz", hash = "sha256:7b7176033dccd82dae00dc04bd470ea0ec7b3b7903b91cd33dcdfc99b3b90ad0"},
-    {file = "pytest_fixture_order-0.1.1-py3-none-any.whl", hash = "sha256:e57a831daa42d69d08e12df20aacd41d37c546e70867774ac83c29e8b6e6ffa3"},
+    {file = "pytest-fixture-order-0.1.2.tar.gz", hash = "sha256:f588376e0361471849b644950e9f82a90a7fb880fee2b0694cad9ea262956a18"},
+    {file = "pytest_fixture_order-0.1.2-py3-none-any.whl", hash = "sha256:6948ed68c18a0379dadb0b916d6171bbe3f23cbb45efa13414aaecd6334b3c09"},
 ]
 pytest-lambda = [
     {file = "pytest-lambda-1.1.1.tar.gz", hash = "sha256:d1b6635ccb9805ae6f618f82e0978f85db17627ae70cdc95e98009d92b708b22"},
