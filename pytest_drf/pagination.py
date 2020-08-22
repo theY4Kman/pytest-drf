@@ -9,7 +9,7 @@ from pytest_assert_utils import util
 
 
 class ReturnsPageNumberPagination:
-    def it_returns_page_number_pagination_format(self, json):
+    def test_it_returns_page_number_pagination_format(self, json):
         expected = {
             'count': util.Any(int),
             'next': util.Optional(util.Any(str)),
@@ -21,7 +21,7 @@ class ReturnsPageNumberPagination:
 
 
 class ReturnsLimitOffsetPagination:
-    def it_returns_limit_offset_pagination_format(self, json):
+    def test_it_returns_limit_offset_pagination_format(self, json):
         expected = {
             'count': util.Any(int),
             'next': util.Optional(util.Any(str)),
@@ -33,7 +33,7 @@ class ReturnsLimitOffsetPagination:
 
 
 class ReturnsCursorPagination:
-    def it_returns_cursor_pagination_format(self, json):
+    def test_it_returns_cursor_pagination_format(self, json):
         expected = {
             'next': util.Optional(util.Any(str)),
             'previous': util.Optional(util.Any(str)),

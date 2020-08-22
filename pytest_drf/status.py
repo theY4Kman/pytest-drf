@@ -49,20 +49,19 @@ class _ReturnsSpecificStatusMeta(type):
 
         # We create a copy of this method, so we can change its name to
         # include the expected status code.
-        def it_returns_expected_status_code(self, response, expected_status_code):
+        def test_it_returns_expected_status_code(self, response, expected_status_code):
             expected = expected_status_code
             actual = response.status_code
             assert expected == actual
 
-        it_returns_expected_status_code.__name__ = f'it_returns_{status_code}'
+        test_it_returns_expected_status_code.__name__ = f'test_it_returns_{status_code}'
 
         returns_code_cls = type(f'Returns{status_code}', (), {
-            f'it_returns_{status_code}': it_returns_expected_status_code,
-            it_returns_expected_status_code.__name__: it_returns_expected_status_code,
+            f'test_it_returns_{status_code}': test_it_returns_expected_status_code,
             'expected_status_code': static_fixture(status_code),
 
             # Disable the original method
-            'it_returns_expected_status_code': None,
+            'test_it_returns_expected_status_code': None,
         })
         return returns_code_cls
 
@@ -78,7 +77,7 @@ class ReturnsStatus(metaclass=_ReturnsSpecificStatusMeta):
             'subclass ReturnStatus(code) instead of the bare ReturnStatus.'
         )
 
-    def it_returns_expected_status_code(self, response, expected_status_code):
+    def test_it_returns_expected_status_code(self, response, expected_status_code):
         expected = expected_status_code
         actual = response.status_code
         assert expected == actual

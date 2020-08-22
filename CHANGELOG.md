@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 
 ## [Unreleased
+### Fixed
+ - Prefix all test methods with `test_`, so they work with standard pytest configuration (previously, tests were prefixed with `it_`, which required `python_functions` to include `it_*` in `pytest.ini`)
 
 
 ## [1.0.3] - 2020-08-21
