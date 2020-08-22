@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 
 ## [Unreleased
+
+
+## [1.0.3] - 2020-08-21
 ### Changed
  - Switched to [pytest-djangoapp](https://github.com/idlesign/pytest-djangoapp) (from [pytest-django](https://github.com/pytest-dev/pytest-django)) for testing
 
