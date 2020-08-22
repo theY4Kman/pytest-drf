@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pytest-drf"
-version = "1.0.3"
+version = "1.0.4"
 description = "A Django REST framework plugin for pytest."
 authors = ["Zach \"theY4Kman\" Kanzler <they4kman@gmail.com>"]
 keywords = ["pytest", "django", "djangorestframework"]
