@@ -1,12 +1,12 @@
 from django.urls import include, path
 from rest_framework import routers
 
-import tests.example_project.views.authentication
-import tests.example_project.views.authorization
-import tests.example_project.views.pagination
-import tests.example_project.views.status
-import tests.example_project.views.views
-from tests.example_project import views
+import tests.testapp.views.authentication
+import tests.testapp.views.authorization
+import tests.testapp.views.pagination
+import tests.testapp.views.status
+import tests.testapp.views.views
+from tests.testapp import views
 
 router = routers.DefaultRouter()
 router.register('views/key-values', views.views.KeyValueViewSet, basename='views-key-values')

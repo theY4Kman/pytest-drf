@@ -6,14 +6,14 @@ from pytest_lambda import lambda_fixture
 from pytest_drf import APIViewTest, AsUser, UsesGetMethod
 
 
-alice = lambda_fixture(lambda db: User.objects.create(
+alice = lambda_fixture(lambda: User.objects.create(
     username='alice',
     first_name='Alice',
     last_name='Innchains',
     email='alice@ali.ce',
 ))
 
-bob = lambda_fixture(lambda db: User.objects.create(
+bob = lambda_fixture(lambda: User.objects.create(
     username='bob',
     first_name='Bob',
     last_name='Loblaw',

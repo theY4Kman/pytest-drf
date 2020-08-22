@@ -4,7 +4,7 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.request import Request
 from rest_framework.response import Response
 
-from tests.example_project.models import KeyValue
+from tests.testapp.models import KeyValue
 
 
 @api_view()

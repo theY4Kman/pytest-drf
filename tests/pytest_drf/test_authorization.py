@@ -11,7 +11,7 @@ from pytest_drf import (
 )
 
 
-user = lambda_fixture(lambda db: User.objects.create(
+user = lambda_fixture(lambda: User.objects.create(
     username='user',
     first_name='Test',
     last_name='User',

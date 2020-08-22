@@ -15,7 +15,7 @@ from pytest_drf import (
     ViewSetTest,
 )
 from pytest_drf.util import pluralized
-from tests.example_project.models import KeyValue
+from tests.testapp.models import KeyValue
 
 
 class DescribeQueryParams(
@@ -107,7 +107,6 @@ def express_key_value(kv: KeyValue) -> Dict[str, Any]:
 express_key_values = pluralized(express_key_value)
 
 
-@pytest.mark.django_db
 class DescribeKeyValueViewSet(ViewSetTest):
     list_url = lambda_fixture(
         lambda:
