@@ -17,7 +17,7 @@ class ReturnsPageNumberPagination:
             'results': util.Any(list),
         }
         actual = json
-        assert actual == expected, 'Response is not in PageNumberPagination format'
+        assert expected == actual, 'Response is not in PageNumberPagination format'
 
 
 class ReturnsLimitOffsetPagination:
@@ -29,7 +29,7 @@ class ReturnsLimitOffsetPagination:
             'results': util.Any(list),
         }
         actual = json
-        assert actual == expected, 'Response is not in LimitOffsetPagination format'
+        assert expected == actual, 'Response is not in LimitOffsetPagination format'
 
 
 class ReturnsCursorPagination:
@@ -40,4 +40,4 @@ class ReturnsCursorPagination:
             'results': util.Any(list),
         }
         actual = json
-        assert actual == expected, 'Response is not in CursorPagination format'
+        assert expected == actual, 'Response is not in CursorPagination format'
