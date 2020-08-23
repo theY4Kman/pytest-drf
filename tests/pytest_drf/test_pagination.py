@@ -1,4 +1,3 @@
-from django.urls import reverse
 from pytest_lambda import lambda_fixture
 
 from pytest_drf import (
@@ -8,6 +7,7 @@ from pytest_drf import (
     ReturnsPageNumberPagination,
     UsesGetMethod,
 )
+from pytest_drf.util import url_for
 
 
 class DescibePageNumberPaginationView(
@@ -16,7 +16,7 @@ class DescibePageNumberPaginationView(
 
     ReturnsPageNumberPagination,
 ):
-    url = lambda_fixture(lambda: reverse('pagination-page-number'))
+    url = lambda_fixture(lambda: url_for('pagination-page-number'))
 
 
 class DescibeLimitOffsetPaginationView(
@@ -25,7 +25,7 @@ class DescibeLimitOffsetPaginationView(
 
     ReturnsLimitOffsetPagination,
 ):
-    url = lambda_fixture(lambda: reverse('pagination-limit-offset'))
+    url = lambda_fixture(lambda: url_for('pagination-limit-offset'))
 
 
 class DescibeCursorPaginationView(
@@ -34,4 +34,4 @@ class DescibeCursorPaginationView(
 
     ReturnsCursorPagination,
 ):
-    url = lambda_fixture(lambda: reverse('pagination-cursor'))
+    url = lambda_fixture(lambda: url_for('pagination-cursor'))

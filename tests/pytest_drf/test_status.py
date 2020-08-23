@@ -1,4 +1,3 @@
-from django.urls import reverse
 from pytest_lambda import lambda_fixture, not_implemented_fixture, static_fixture
 
 from pytest_drf import (
@@ -26,6 +25,7 @@ from pytest_drf import (
     ReturnsStatus,
     UsesGetMethod,
 )
+from pytest_drf.util import url_for
 
 
 class DescribeStatusCode(
@@ -38,7 +38,7 @@ class DescribeStatusCode(
 
     url = lambda_fixture(
         lambda status_code:
-            reverse('status-code', kwargs={'code': status_code}))
+            url_for('status-code', code=status_code))
 
 
     class Case200(Returns200):

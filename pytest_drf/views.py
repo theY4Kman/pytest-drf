@@ -79,7 +79,7 @@ class APIViewTest(CommonSubjectTestMixin):
     def url(self):
         """Base URL to be requested
 
-        Use reverse() to generate URLs:
+        Use Django's reverse() to generate URLs:
 
             @pytest.fixture
             def url():
@@ -91,6 +91,14 @@ class APIViewTest(CommonSubjectTestMixin):
             # Other fixtures can be requested to use in URL generation:
             url = lambda_fixture(lambda vendor: reverse('vendors-detail',
                                                         args=(vendor.pk,)))
+
+        If Django's reverse() feels a little bulky (especially when passing
+        args/kwargs), use pytest-drf's url_for:
+
+            from pytest_drf.util import url_for
+
+            url = lambda_fixture(lambda vendor: url_for('vendors-detail',
+                                                        vendor.pk))
 
         """
         raise NotImplementedError('Please define a url fixture')

@@ -1,5 +1,4 @@
 from django.contrib.auth.models import User
-from django.urls import reverse
 from pytest_lambda import lambda_fixture
 
 from pytest_drf import (
@@ -9,6 +8,7 @@ from pytest_drf import (
     Returns200,
     UsesGetMethod,
 )
+from pytest_drf.util import url_for
 
 
 user = lambda_fixture(lambda: User.objects.create(
@@ -30,5 +30,5 @@ class DescribeLoginRequired(
 ):
     # NOTE: this view simply returns 200, but requires an authenticated user
     #       (i.e. it declares IsAuthenticated for its permission_classes)
-    url = lambda_fixture(lambda: reverse('authorization-login-required'))
+    url = lambda_fixture(lambda: url_for('authorization-login-required'))
 

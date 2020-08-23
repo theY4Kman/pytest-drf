@@ -1,7 +1,5 @@
 from typing import Any, Dict
 
-import pytest
-from django.urls import reverse
 from pytest_assert_utils import assert_dict_is_subset, assert_model_attrs
 from pytest_common_subject import precondition_fixture
 from pytest_lambda import lambda_fixture, static_fixture
@@ -9,12 +7,18 @@ from pytest_lambda import lambda_fixture, static_fixture
 from pytest_drf import (
     APIViewTest,
     Returns200,
-    Returns201, Returns204, UsesDeleteMethod, UsesDetailEndpoint, UsesGetMethod,
+    Returns201,
+    Returns204,
+    UsesDeleteMethod,
+    UsesDetailEndpoint,
+    UsesGetMethod,
     UsesListEndpoint,
-    UsesPatchMethod, UsesPostMethod,
+    UsesPatchMethod,
+    UsesPostMethod,
     ViewSetTest,
 )
-from pytest_drf.util import pluralized
+from pytest_drf.util import pluralized, url_for
+
 from tests.testapp.models import KeyValue
 
 
@@ -23,7 +27,7 @@ class DescribeQueryParams(
     UsesGetMethod,
 ):
     # NOTE: this view simply returns the request's query params as the response
-    url = lambda_fixture(lambda: reverse('views-query-params'))
+    url = lambda_fixture(lambda: url_for('views-query-params'))
 
     # This fixture supports passing query params (e.g. ?key=val) with the requested URL
     query_params = static_fixture({
@@ -44,7 +48,7 @@ class DescribeHeaders(
     UsesGetMethod,
 ):
     # NOTE: this view simply returns the request's headers as the response
-    url = lambda_fixture(lambda: reverse('views-headers'))
+    url = lambda_fixture(lambda: url_for('views-headers'))
 
     # This fixture supports passing headers (e.g. `Authorization: Api-Key 123`) in the request
     headers = static_fixture({
@@ -64,7 +68,7 @@ class DescribeData(
     UsesPostMethod,
 ):
     # NOTE: this view simply returns the request's POST data as the response
-    url = lambda_fixture(lambda: reverse('views-data'))
+    url = lambda_fixture(lambda: url_for('views-data'))
 
     # This fixture supports passing POST data in the request
     data = static_fixture({
@@ -110,11 +114,11 @@ express_key_values = pluralized(express_key_value)
 class DescribeKeyValueViewSet(ViewSetTest):
     list_url = lambda_fixture(
         lambda:
-            reverse('views-key-values-list'))
+            url_for('views-key-values-list'))
 
     detail_url = lambda_fixture(
         lambda key_value:
-            reverse('views-key-values-detail', kwargs={'pk': key_value.pk}))
+            url_for('views-key-values-detail', pk=key_value.pk))
 
 
     class DescribeList(

@@ -1,10 +1,9 @@
 from django.contrib.auth.models import User
-from django.urls import reverse
 
 from pytest_lambda import lambda_fixture
 
 from pytest_drf import APIViewTest, AsUser, UsesGetMethod
-
+from pytest_drf.util import url_for
 
 alice = lambda_fixture(lambda: User.objects.create(
     username='alice',
@@ -27,7 +26,7 @@ class DescribeUserInfo(
 ):
     # NOTE: this view returns the username, first_name, last_name, and email of
     #       the authenticated user.
-    url = lambda_fixture(lambda: reverse('authentication-user-info'))
+    url = lambda_fixture(lambda: url_for('authentication-user-info'))
 
 
     class CaseAlice(AsUser('alice')):
