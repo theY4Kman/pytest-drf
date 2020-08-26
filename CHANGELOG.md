@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased
 ### Added
  - Exposed `url_for`, a compact wrapper around Django's `reverse()` to generate URLs succinctly
+ - Add docs/tutorial to README
 
 
 ## [1.0.4] - 2020-08-22
