@@ -1,4 +1,10 @@
-from typing import Any, Callable, Iterable, List, Protocol, TypeVar, Union
+from typing import Callable, Iterable, List, TypeVar, Union
+
+try:
+    from typing import Protocol
+except ImportError:
+    # Python 3.6 and 3.7
+    from typing_extensions import Protocol
 
 __all__ = ['pluralized']
 
