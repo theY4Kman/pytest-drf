@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 
 ## [Unreleased]
+
+
+## [1.1.2] — 2020-11-12
 ### Fixed
  - Resolve `typing.Protocol` `ImportError` on Python version 3.6 and 3.7
 
