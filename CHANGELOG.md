@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
  - Remove support for Python 3.6
  - Add support for Python 3.9, 3.10, and 3.11
+ - Add support for py.test 3.6 through 7.1
 
 
 ## [1.1.2] — 2020-11-12
