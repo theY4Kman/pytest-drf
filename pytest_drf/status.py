@@ -6,7 +6,7 @@ This module contains test mixins to declare the HTTP status code expected in
 an API response
 
 """
-from typing import Type
+from typing import Type, TYPE_CHECKING
 
 import pytest
 from pytest_lambda import static_fixture
@@ -82,12 +82,11 @@ class ReturnsStatus(metaclass=_ReturnsSpecificStatusMeta):
         actual = response.status_code
         assert expected == actual
 
-    # this appeases code sense, which may not be able to understand how the
-    # metaclass allows using instantiation syntax without really instantiating.
-    def __init__(self, status_code: int):
-        pass
-
-    del __init__
+    if TYPE_CHECKING:
+        # this appeases code sense, which may not be able to understand how the
+        # metaclass allows using instantiation syntax without really instantiating.
+        def __new__(cls, status_code: int) -> Type['ReturnsStatus']:
+            ...
 
 
 # 2xx Success
