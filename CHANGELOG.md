@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 
 ## [Unreleased]
+
+
+## [1.1.3] — 2022-07-12
 ### Fixed
  - Resolve incorrect typing for `ReturnsStatus` (and `ReturnsNNN` family) — see [GH#12](https://github.com/theY4Kman/pytest-drf/pull/12), thanks [@last-partizan](https://github.com/last-partizan)
 
