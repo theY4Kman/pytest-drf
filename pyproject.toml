@@ -12,6 +12,13 @@ classifiers = [
   "Framework :: Django",
   "Framework :: Pytest",
   "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
   "Topic :: Software Development :: Testing",
 ]
 packages = [
@@ -23,21 +30,23 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.6,<4.0"
+python = ">=3.10,<3.15"
+
+# Django 3.2 remains installable for legacy compatibility. Unsupported Django
+# releases may contain known or unpatched security vulnerabilities.
+django = ">=3.2,<7"
 
 djangorestframework = ">3"
 inflection = "^0.3.1"
-pytest = ">=3.7"
+pytest = ">=6.2"
 pytest-assert-utils = "^0"
 pytest-common-subject = "^1.0"
 pytest-lambda = ">=1.2.3"
-typing_extensions = { version = "^3.7.4", python = "<3.8" }
 
 [tool.poetry.dev-dependencies]
-django = "^3"
 pytest-camel-collect = "^1.0.1"
 pytest-djangoapp = "^0.15.0"
-tox = "^3.20.1"
+tox = "^4.0"
 
 [tool.poetry.plugins."pytest11"]
 drf = "pytest_drf.plugin"
