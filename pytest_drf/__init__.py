@@ -1,6 +1,9 @@
-import pkg_resources
+from importlib.metadata import version, PackageNotFoundError
 
-__version__ = pkg_resources.get_distribution('pytest-drf').version
+try:
+    __version__ = version("pytest-drf")
+except PackageNotFoundError:
+    __version__ = '0.0.0-dev'
 
 
 from .authentication import *
