@@ -692,7 +692,8 @@ class TestDestroy(
 
     initial_key_value_ids = precondition_fixture(
         lambda key_value:  # ensure our to-be-deleted KeyValue exists in our set
-            set(KeyValue.objects.values_list('id', flat=True)))
+            set(KeyValue.objects.values_list('id', flat=True)),
+        async_=False)
 
     def test_it_deletes_key_value(self, initial_key_value_ids, key_value):
         expected = initial_key_value_ids - {key_value.id}
@@ -801,7 +802,8 @@ class TestKeyValueViewSet(ViewSetTest):
 
         initial_key_value_ids = precondition_fixture(
             lambda:
-                set(KeyValue.objects.values_list('id', flat=True)))
+                set(KeyValue.objects.values_list('id', flat=True)),
+            async_=False)
 
         def test_it_creates_new_key_value(self, initial_key_value_ids, json):
             expected = initial_key_value_ids | {json['id']}
@@ -885,7 +887,8 @@ class TestKeyValueViewSet(ViewSetTest):
 
         initial_key_value_ids = precondition_fixture(
             lambda key_value:  # ensure our to-be-deleted KeyValue exists in our set
-                set(KeyValue.objects.values_list('id', flat=True)))
+                set(KeyValue.objects.values_list('id', flat=True)),
+            async_=False)
 
         def test_it_deletes_key_value(self, initial_key_value_ids, key_value):
             expected = initial_key_value_ids - {key_value.id}
@@ -1004,7 +1007,8 @@ class DescribeKeyValueViewSet(ViewSetTest):
 
         initial_key_value_ids = precondition_fixture(
             lambda:
-                set(KeyValue.objects.values_list('id', flat=True)))
+                set(KeyValue.objects.values_list('id', flat=True)),
+            async_=False)
 
         def it_creates_new_key_value(self, initial_key_value_ids, json):
             expected = initial_key_value_ids | {json['id']}
@@ -1088,7 +1092,8 @@ class DescribeKeyValueViewSet(ViewSetTest):
 
         initial_key_value_ids = precondition_fixture(
             lambda key_value:  # ensure our to-be-deleted KeyValue exists in our set
-                set(KeyValue.objects.values_list('id', flat=True)))
+                set(KeyValue.objects.values_list('id', flat=True)),
+            async_=False)
 
         def it_deletes_key_value(self, initial_key_value_ids, key_value):
             expected = initial_key_value_ids - {key_value.id}
